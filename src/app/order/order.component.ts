@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms'
 
 import { Router } from '@angular/router'
 
@@ -13,6 +14,8 @@ import { Order, OrderItem } from './order.model'
 })
 export class OrderComponent implements OnInit {
 
+  orderForm: FormGroup
+
   delivery: number = 8
 
 	paymentOptions: RadioOption[] = [
@@ -21,7 +24,8 @@ export class OrderComponent implements OnInit {
 		{label: 'CARTAO REFEIÇÃO', value: 'REF'}
 	]
 
-  constructor(private orderService: OrderService, private router: Router) { }
+  constructor(private orderService: OrderService, private router: Router,
+              private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }

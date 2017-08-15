@@ -5,34 +5,59 @@
   <section class="content">
     <section class="invoice">
 
-        <form #form="ngForm" novalidate>
+        <form [formGroup]= "orderForm" novalidate>
           <div class="row">
             <div class="col-xs-12">
               <h2 class="page-header">
                 <i class="fa fa-shopping-cart"></i> Finalize o seu pedido
               </h2>
             </div>
-          </div>                
+          </div> 
 
-          <div class="row invoice-info">
+          <div class="row">
+            <div class="col-xs-12">
+                <p class="lead"> Seus Dados:</p>
+
+              <div class="col-sm-6 col-xs-12">
+              <mt-input-container errorMessage="Campo Obrigatorio" label="Nome">
+                <input class="form-control" formControlName="name" placeholder="Nome">
+              </mt-input-container>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+              <mt-input-container errorMessage="e-mail inválido" label="E-mail">
+                <input class="form-control" formControlName="email" placeholder="e-mail">
+              </mt-input-container>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+              <mt-input-container errorMessage="e-mail inválido" label="E-mail">
+                <input class="form-control" formControlName="emailConfirmation" required minlength="5" placeholder="e-mail">
+              </mt-input-container>
+            </div>
+
+            </div>
+          </div>               
+
+          <div class="row">
             <div class="col-xs-12">
               <p class="lead">Endereço de Entrega:</p>
             </div>
             <div class="col-sm-6 col-xs-12">
               <mt-input-container errorMessage="Campo Obrigatorio" label="Endereço">
-                <input class="form-control" ngModel name="address" required minlength="5" placeholder="Endereço">
+                <input class="form-control" formControlName="address" placeholder="Endereço">
               </mt-input-container>
             </div>
 
             <div class="col-sm-3 col-xs-6">
               <mt-input-container errorMessage="Obrigatorio e somente numeros" label="Número">
-                  <input class="form-control" ngModel name="number" pattern="^[0-9]*$" required placeholder="Número">
+                  <input class="form-control" formControlName="number" placeholder="Número">
               </mt-input-container>
             </div>
 
             <div class="col-sm-3 col-xs-6">
                 <mt-input-container>
-                  <input type="text" class="form-control" name="Complemento" ngModel placeholder="Complemento">
+                  <input type="text" class="form-control" formControlName="Complemento" placeholder="Complemento">
                 </mt-input-container>
             </div>
 
@@ -63,7 +88,7 @@
 
                 <div class="form-group">
 
-                  <mt-radio [options]="paymentOptions" name="paymentOption" ngModel required></mt-radio>
+                  <mt-radio [options]="paymentOptions" formControlName="paymentOption" ></mt-radio>
 
                 </div>
 
