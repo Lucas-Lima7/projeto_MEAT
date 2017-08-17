@@ -33,7 +33,7 @@ import { RatingComponent } from './shared/rating/rating.component'
 
 
 @NgModule({
-  declarations: [
+  declarations: [ //lista todos os componentes que serão usados
     AppComponent,
     HeaderComponent,
     HomeComponent,
@@ -61,7 +61,7 @@ import { RatingComponent } from './shared/rating/rating.component'
     RouterModule.forRoot(ROUTES)
 
   ],
-  providers: [RestaurantsService, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RestaurantsService, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}], // serviços disponiveis
   bootstrap: [AppComponent]
 })
 export class AppModule { }
