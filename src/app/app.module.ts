@@ -21,7 +21,8 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 import { SharedModule } from './shared/shared.module'
-import { OrderModule } from './order/order.module'
+import { OrderModule } from './order/order.module';
+import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
   declarations: [ //lista todos os componentes que serão usados
@@ -36,6 +37,7 @@ import { OrderModule } from './order/order.module'
     MenuItemComponent,
     ReviewsComponent,
     OrderSummaryComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

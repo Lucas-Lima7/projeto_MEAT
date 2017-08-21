@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Restaurant } from './restaurant.model'
 import { trigger, state, style, transition, animate } from '@angular/animations'
+
+import { Restaurant } from './restaurant.model'
 
 @Component({
   selector: 'mt-restaurant',
@@ -10,9 +11,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 	  		state('ready', style({opacity: 1})),
 	  		transition('void => ready', [
 	  			style({opacity: 0, transform: 'translate(-30px, -10px)'}),
-	  			animate('500ms 0s easy-in-out')
+	  			animate('500ms 0s ease-in-out')
 	  			])
-	  		)]
+	  		])
   		]
 })
 
