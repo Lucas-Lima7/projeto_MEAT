@@ -11,7 +11,7 @@ import { Restaurant } from '../restaurants/restaurant/restaurant.model'
 })
 export class RestaurantDetailComponent implements OnInit {
 
-  restaurant: Restaurant[]
+  restaurant: Restaurant
 
   constructor(private restaurantsService: RestaurantsService, 
   			  private route: ActivatedRoute) { }
